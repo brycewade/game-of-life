@@ -11,21 +11,6 @@
     <packaging>jar</packaging>
     <name>gameoflife-core</name>
     <url>${HUDSON_URL}</url>
-<!--
-       This dependency will ensure that logback-classic isn't used when the Cobertura code base
-  is referenced via the cobertura-maven-plugin.
- -->
-    <dependency>
-       <groupId>net.sourceforge.cobertura</groupId>
-       <artifactId>cobertura</artifactId>
-       <version>2.1.1</version>
-       <exclusions>
-          <exclusion>
-             <groupId>ch.qos.logback</groupId>
-             <artifactId>logback-classic</artifactId>
-          </exclusion>
-       </exclusions>
-    </dependency>
     <reporting>
         <plugins>
             <plugin>
@@ -64,34 +49,6 @@
                         <format>html</format>
                     </formats>
                 </configuration>
-               <dependencies>
-                   <dependency>
-                      <groupId>org.apache.logging.log4j</groupId>
-                      <artifactId>log4j-slf4j-impl</artifactId>
-                      <version>2.6.2</version>
-                   </dependency>
-                   <dependency>
-                      <groupId>org.apache.logging.log4j</groupId>
-                      <artifactId>log4j-core</artifactId>
-                      <version>2.6.2</version>
-                   </dependency>
-                   <dependency>
-                      <groupId>my.project</groupId>
-                      <artifactId>log4j2-config</artifactId>
-                      <version>${project.version}</version>
-                   </dependency>
-                   <dependency>
-                      <groupId>net.sourceforge.cobertura</groupId>
-                      <artifactId>cobertura</artifactId>
-                      <version>2.1.1</version>
-                      <exclusions>
-                         <exclusion>
-                            <groupId>ch.qos.logback</groupId>
-                            <artifactId>logback-classic</artifactId>
-                         </exclusion>
-                      </exclusions>
-                   </dependency>
-                </dependencies>
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
