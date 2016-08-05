@@ -11,6 +11,21 @@
     <packaging>jar</packaging>
     <name>gameoflife-core</name>
     <url>${HUDSON_URL}</url>
+<!--
+       This dependency will ensure that logback-classic isn't used when the Cobertura code base
+  is referenced via the cobertura-maven-plugin.
+ -->
+    <dependency>
+       <groupId>net.sourceforge.cobertura</groupId>
+       <artifactId>cobertura</artifactId>
+       <version>2.1.1</version>
+       <exclusions>
+          <exclusion>
+             <groupId>ch.qos.logback</groupId>
+             <artifactId>logback-classic</artifactId>
+          </exclusion>
+       </exclusions>
+    </dependency>
     <reporting>
         <plugins>
             <plugin>
